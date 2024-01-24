@@ -165,7 +165,7 @@ const Updateform = () => {
           />
         </section>
         <button className="bg-blue-400 whitespace-nowrap px-4 py-2 rounded-md shadow-md text-white">
-          Add new order
+          Update Log
         </button>
       </form>
     </section>
