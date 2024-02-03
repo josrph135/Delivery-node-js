@@ -1,9 +1,9 @@
-import { useState } from "react";
 import axios from "axios";
 
 const VendorForm = ({ setAddVendor }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
+    var alertDom = document.getElementById("alert");
     const formData = new FormData(e.currentTarget);
     const newLog = Object.fromEntries(formData);
     try {
@@ -15,10 +15,15 @@ const VendorForm = ({ setAddVendor }) => {
       await api.post("/vendor", newLog);
       // Close the modal and refresh the vendors list
       setAddVendor(false);
+      alertDom.textContent = "Vendor added successfully";
     } catch (error) {
       // Handle errors if necessary
       console.error("Error creating vendor:", error);
     }
+    setTimeout(() => {
+      alertDom.classname = "hidden";
+      alertDom.textContent = "";
+    }, 2000);
   };
 
   return (

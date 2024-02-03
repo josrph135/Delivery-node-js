@@ -8,7 +8,10 @@ const Home = () => {
   return (
     <div>
       <main className="flex flex-col items-start gap-4 px-12 bg-slate-200 rounded-md py-16">
-        <p className="alert"></p>
+        <p
+          className="text-green-500 capitalize text-[14px] text-center"
+          id="alert"
+        ></p>
         <header className="text-2xl font-semibold">Dashboard</header>
         <section className="flex flex-row gap-2 flex-wrap">
           <button
@@ -33,7 +36,7 @@ const Home = () => {
           </Link>
         </section>
       </main>
-      <p>Copyright &copy; 2024 Molieve</p>
+      <p className="text-[14px] pt-4">Copyright &copy; 2024 Jade</p>
     </div>
   );
 };

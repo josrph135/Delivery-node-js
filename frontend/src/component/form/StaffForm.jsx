@@ -3,6 +3,7 @@ import axios from "axios";
 const StaffForm = ({ setAddStaff }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
+    var alertDom = document.getElementById("alert");
     const formData = new FormData(e.currentTarget);
     const newLog = Object.fromEntries(formData);
     try {
@@ -14,10 +15,15 @@ const StaffForm = ({ setAddStaff }) => {
       await api.post("/staff", newLog);
       // Close the modal and refresh the vendors list
       setAddStaff(false);
+      alertDom.textContent = "Staff added successfully";
     } catch (error) {
       // Handle errors if necessary
       console.error("Error creating vendor:", error);
     }
+    setTimeout(() => {
+      alertDom.classname = "hidden";
+      alertDom.textContent = "";
+    }, 2000);
   };
   return (
     <section className="z-30 top-0 left-0 right-0 bottom-0 bg-black/50 fixed flex items-center justify-center">
