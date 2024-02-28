@@ -38,7 +38,7 @@ const VendorForm = ({ setAddVendor }) => {
         >
           X
         </p>
-        <header className="text-start font-semibold text-2xl">
+        <header className="text-start font-semibold text-lg md:text-2xl">
           Add Vendor
         </header>
         <section className="flex flex-col items-start">

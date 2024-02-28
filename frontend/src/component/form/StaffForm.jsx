@@ -37,7 +37,9 @@ const StaffForm = ({ setAddStaff }) => {
         >
           X
         </p>
-        <header className="text-start font-semibold text-2xl">Add Staff</header>
+        <header className="text-start font-semibold text-lg md:text-2xl">
+          Add Staff
+        </header>
         <section className="flex flex-col items-start">
           <label className="font-semibold" htmlFor="staffName">
             Name:

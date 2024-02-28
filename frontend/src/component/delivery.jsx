@@ -41,19 +41,21 @@ const Delivery = () => {
           Add New Delivery
         </button>
       </section>
-      <table className="text-sm">
+      <table className="text-xs border overflow-x-auto border-black sm:text-sm">
         <thead>
-          <tr>
-            <th>SN</th>
-            <th>Date</th>
-            <th>Rider</th>
-            <th>Vendor</th>
-            <th>Item-type</th>
-            <th>Sender details</th>
-            <th>Reciever details</th>
-            <th>Mode of payment</th>
-            <th>Amount</th>
-            <th className="">Action</th>
+          <tr className="bg-teal-500 text-white h-10 text-sm tracking-wider sm:text-base font-medium">
+            <th className=" border border-black px-1">SN</th>
+            <th className=" border border-black px-1">Date</th>
+            <th className=" border border-black px-1">Rider</th>
+            <th className=" border border-black px-1">Vendor</th>
+            <th className=" border border-black px-1">Item-type</th>
+            <th className=" border border-black px-1">Sender details</th>
+            <th className=" border border-black px-1">Reciever details</th>
+            <th className=" border border-black px-1">Mode of payment</th>
+            <th className=" border border-black px-1">Amount</th>
+            <th className=" border border-black px-1" colSpan={"2"}>
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -70,25 +72,25 @@ const Delivery = () => {
               amount,
             } = singleData;
             return (
-              <tr key={_id}>
-                <td>{i + 1}</td>
-                <td>{createdAt}</td>
-                <td>{rider}</td>
-                <td>{vendor}</td>
-                <td>{item}</td>
-                <td>{sender}</td>
-                <td>{reciever}</td>
-                <td>{payment}</td>
-                <td>{amount}</td>
-                <td>
+              <tr className="hover:bg-slate-100 h-9" key={_id}>
+                <td className=" border border-black px-1">{i + 1}</td>
+                <td className=" border border-black px-1">{createdAt}</td>
+                <td className=" border border-black px-1">{rider}</td>
+                <td className=" border border-black px-1">{vendor}</td>
+                <td className=" border border-black px-1">{item}</td>
+                <td className=" border border-black px-1">{sender}</td>
+                <td className=" border border-black px-1">{reciever}</td>
+                <td className=" border border-black px-1">{payment}</td>
+                <td className=" border border-black px-1">{amount}</td>
+                <td className=" border border-black px-1">
                   <Link
                     to={`/updateform/${_id}`}
-                    className="bg-teal-500 whitespace-nowrap px-2 py-1 rounded-md shadow-md text-white"
+                    className="bg-yellow-600 whitespace-nowrap px-2 py-1 rounded-md shadow-md text-white"
                   >
                     Edit
                   </Link>
                 </td>
-                <td>
+                <td className=" border border-black px-1">
                   <button
                     onClick={() => deleteHandle(_id)}
                     className="bg-red-500 whitespace-nowrap px-2 py-1 rounded-md shadow-md text-white"
