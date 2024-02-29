@@ -23,7 +23,7 @@ const Delivery = () => {
       .get("http://localhost:5000/api/v1/delivery")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, [openAdd]);
+  }, [data]);
 
   return (
     <div className="flex flex-col gap-4">
