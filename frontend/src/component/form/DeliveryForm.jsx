@@ -38,7 +38,7 @@ const DeliveryForm = ({ setAdd }) => {
     }
   };
   return (
-    <section className="z-30 top-0 left-0 right-0 bottom-0 bg-black/50 fixed flex items-center justify-center">
+    <section className="z-30 top-0 left-0 right-0 bottom-0 bg-black/60 fixed flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
         className="bg-white rounded-md overflow-y-auto h-[85%] md:w-1/2 sm:w-3/5 w-4/5 flex flex-col gap-4 p-8 relative"
