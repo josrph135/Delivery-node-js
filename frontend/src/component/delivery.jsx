@@ -47,8 +47,8 @@ const Delivery = () => {
           Add New Delivery
         </button>
       </section>
-      <div className=" overflow-x-scroll">
-        <table className="text-xs border border-black sm:text-sm">
+      <div className=" overflow-x-scroll w-full">
+        <table className="text-xs border border-black sm:text-sm w-full">
           <thead>
             <tr className="bg-teal-500 text-white h-10 text-sm tracking-wider md:text-base font-medium">
               <th className=" border border-black px-1">SN</th>
