@@ -45,15 +45,19 @@ const Updateform = () => {
     <section className="z-30 top-0 left-0 right-0 bottom-0 bg-black/50 fixed flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-md h-fit w-3/5 flex flex-col gap-4 p-8 relative"
+        className="bg-white rounded-md overflow-y-auto h-[85%] md:w-1/2 sm:w-3/5 w-4/5 flex flex-col gap-4 p-8 relative"
       >
-        <Link
-          to={"/delivery"}
-          className="absolute top-2 right-8 font-semibold hover:rotate-180 duration-300 cursor-pointer"
-        >
-          X
-        </Link>
-        <section className="flex flex-col items-start">
+        <header className="absolute bg-teal-600/70 py-2 top-0 right-0 left-0">
+          <h2 className="text-lg sm:text-xl font-semibold">Update Log</h2>
+          <Link
+            to={"/delivery"}
+            className="absolute top-2 right-8 font-semibold hover:rotate-180 duration-300 cursor-pointer"
+          >
+            X
+          </Link>
+        </header>
+
+        <section className="flex pt-4 flex-col items-start">
           <label className="font-semibold" htmlFor="date">
             Date
           </label>

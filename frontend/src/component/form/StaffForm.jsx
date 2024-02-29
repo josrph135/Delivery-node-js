@@ -29,18 +29,19 @@ const StaffForm = ({ setAddStaff }) => {
     <section className="z-30 top-0 left-0 right-0 bottom-0 bg-black/50 fixed flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-md h-fit w-3/5 flex flex-col gap-4 px-8 pt-2 pb-8 relative"
+        className="bg-white rounded-md h-fit md:w-1/2 sm:w-3/5 w-4/5 flex flex-col gap-4 px-8 pt-2 pb-8 relative"
       >
-        <p
-          className="absolute top-2 right-8 font-semibold hover:rotate-180 duration-300 text-lg cursor-pointer"
-          onClick={() => setAddStaff(false)}
-        >
-          X
-        </p>
-        <header className="text-start font-semibold text-lg md:text-2xl">
-          Add Staff
+        <header className="absolute bg-teal-600/70 py-2 top-0 right-0 left-0">
+          <h2 className="text-lg sm:text-xl font-semibold">Add Staff</h2>
+          <p
+            className="absolute top-2 right-8 font-semibold hover:rotate-180 duration-300 text-lg cursor-pointer"
+            onClick={() => setAddStaff(false)}
+          >
+            X
+          </p>
         </header>
-        <section className="flex flex-col items-start">
+
+        <section className="flex pt-12 flex-col items-start">
           <label className="font-semibold" htmlFor="staffName">
             Name:
           </label>
