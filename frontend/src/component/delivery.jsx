@@ -50,7 +50,7 @@ const Delivery = () => {
       <div className=" overflow-x-scroll">
         <table className="text-xs border border-black sm:text-sm">
           <thead>
-            <tr className="bg-teal-500 text-white h-10 text-sm tracking-wider sm:text-base font-medium">
+            <tr className="bg-teal-500 text-white h-10 text-sm tracking-wider md:text-base font-medium">
               <th className=" border border-black px-1">SN</th>
               <th className=" border border-black px-1">Date</th>
               <th className=" border border-black px-1">Rider</th>
