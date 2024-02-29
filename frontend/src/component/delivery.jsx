@@ -9,7 +9,13 @@ const Delivery = () => {
   const [openAdd, setAdd] = useState(false);
 
   const deleteHandle = async (_id) => {
-    await axios.delete("http://localhost:5000/api/v1/delivery/" + _id);
+    try {
+      await axios.delete(`http://localhost:5000/api/v1/delivery/${_id}`);
+      // Refresh data after deletion if needed
+      // Example: refetchData();
+    } catch (error) {
+      console.error("Error deleting data:", error);
+    }
   };
 
   useEffect(() => {
@@ -17,7 +23,7 @@ const Delivery = () => {
       .get("http://localhost:5000/api/v1/delivery")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, [data]);
+  }, [openAdd]);
 
   return (
     <div className="flex flex-col gap-4">
