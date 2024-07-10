@@ -7,14 +7,14 @@ const DeliveryForm = ({ setAdd }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/vendor")
+      .get("https://delivery-node-server.vercel.app/api/v1/vendor")
       .then((res) => setVendor(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/staff")
+      .get("https://delivery-node-server.vercel.app/api/v1/staff")
       .then((res) => setRider(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -26,7 +26,7 @@ const DeliveryForm = ({ setAdd }) => {
     try {
       // Create an Axios instance with the base URL
       const api = axios.create({
-        baseURL: "http://localhost:5000/api/v1",
+        baseURL: "https://delivery-node-server.vercel.app/api/v1",
       });
       // Make a POST request using the created Axios instance
       await api.post("/delivery", newLog);

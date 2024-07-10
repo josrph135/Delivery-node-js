@@ -10,7 +10,9 @@ const Delivery = () => {
 
   const deleteHandle = async (_id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/delivery/${_id}`);
+      await axios.delete(
+        `https://delivery-node-server.vercel.app/api/v1/delivery/${_id}`
+      );
       // Refresh data after deletion if needed
       // Example: refetchData();
     } catch (error) {
@@ -20,7 +22,7 @@ const Delivery = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/v1/delivery")
+      .get("https://delivery-node-server.vercel.app/api/v1/delivery")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, [data]);

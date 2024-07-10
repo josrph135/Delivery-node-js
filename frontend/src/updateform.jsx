@@ -19,16 +19,18 @@ const Updateform = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/v1/delivery/" + id).then((res) => {
-      const data = res.data;
-      setLog({ ...log, ...data });
-    });
     axios
-      .get("http://localhost:5000/api/v1/staff")
+      .get("https://delivery-node-server.vercel.app/api/v1/delivery" + id)
+      .then((res) => {
+        const data = res.data;
+        setLog({ ...log, ...data });
+      });
+    axios
+      .get("https://delivery-node-server.vercel.app/api/v1/staff")
       .then((res) => setRider(res.data))
       .catch((err) => console.log(err));
     axios
-      .get("http://localhost:5000/api/v1/vendor")
+      .get("https://delivery-node-server.vercel.app/api/v1/vendor")
       .then((res) => setVendor(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -37,7 +39,10 @@ const Updateform = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .patch(`http://localhost:5000/api/v1/delivery/` + id, log)
+      .patch(
+        `https://delivery-node-server.vercel.app/api/v1/delivery/` + id,
+        log
+      )
       .catch((err) => console.log(err));
     navigate("/delivery");
   };
